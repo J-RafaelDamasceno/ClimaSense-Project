@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>ClimaSense</title>
+  <meta name="title" content="ClimaSense">
+
+  <!-- 
+    - favicon
+  -->
+  <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <!-- <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/sidebar.css"> -->
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+  <!-- 
+    - custom js link
+  -->
+  <!-- <script src="./assets/js/app.js" type="module"></script>
+  <script src="./assets/js/route.js" type="module"></script> -->
+
+  <script src="{% static 'js/app.js' %}" type="module"></script>
+  <script src="{% static 'js/route.js' %}" type="module"></script>
+
+</head>
+
+<body>
+  
+  <!-- Jquery -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
+    integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
+    crossorigin="anonymous"
+  ></script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- <div class="container"> -->
+    <div class="sidebar">
+        <div class="menu-btn">
+          <i class="ph-bold ph-caret-left"></i>
+        </div>
+        <div class="head">
+          <div class="user-img">
+            <!-- <img src="user.jpg" alt="" /> -->
+          </div>
+          <div class="user-details">
+            <p class="title">Seja Bem-Vindo!</p>
+            <p class="name">Ola, José Rafael</p>
+          </div>
+        </div>
+        <div class="nav">
+          <div class="menu">
+            <p class="title">Central</p>
+            <ul  class="list">
+        
+              <li class="lista active">
+                <a href="#/weather?lat=51.5073219&lon=-0.1276474">
+                  <i class="icon ph-bold ph-house-simple"></i>
+                  <span class="text">Dashboard</span>
+                </a>
+              </li>
+              <li class="lista">
+                <a href="#">
+                  <i class="icon ph-bold ph-user"></i>
+                  <span class="text">Audience</span>
+                </a>
+              </li>
+              <li class="lista">
+                <a href="#">
+                  <i class="icon ph-bold ph-file-text"></i>
+                  <span class="text">Posts</span>
+                </a>
+              </li>
+              <li class="lista">
+                <a href="#">
+                  <i class="icon ph-bold ph-calendar-blank"></i>
+                  <span class="text">Schedules</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu">
+            <p class="title">Opções</p>
+            <ul>
+              <li class="sidebar-menu">
+                <a href="#">
+                  <i class="icon ph-bold ph-gear"></i>
+                  <span class="text">Opções</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu">
+          <p class="title">Acesso</p>
+          <ul>
+            <li class="sidebar-menu">
+              <a href="#">
+                <i class="icon ph-bold ph-info"></i>
+                <span class="text">Suporte</span>
+              </a>
+            </li>
+            <li class="sidebar-menu">
+              <a href="#">
+                <i class="icon ph-bold ph-sign-out"></i>
+                <span class="text">Sair</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  <!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="main-content">
+    <!--
+      - #HEADER
+    -->
+    <header class="header">
+      <div class="container">
+        <div class="search-view" data-search-view>
+          <div class="search-wrapper">
+            <input type="search" name="search" placeholder="Procurar cidade..." autocomplete="off" class="search-field"
+              data-search-field>
+            <span class="m-icon leading-icon">search</span>
+            <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+              <span class="m-icon">arrow_back</span>
+            </button>
+          </div>
+          <div class="search-result" data-search-result></div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
+            <span class="m-icon icon">search</span>
+          </button>
+          <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+            <i class="ph ph-gps-fix"></i>
+            <span class="span">Localização Atual</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <article class="container" data-container>
+        <div class="content-left">
+          <div class="search-view" data-search-view>
+            <div class="search-wrapper">
+              <input type="search" name="search" placeholder="Procurar cidade..." autocomplete="off" class="search-field"
+                data-search-field>
+    
+              <span class="m-icon leading-icon">search</span>
+    
+            </div>
+            <div class="search-result" data-search-result></div>
+          </div>
+          <!--
+            - #CURRENT WEATHER
+          -->
+          <section class="section current-weather" aria-label="current weather" data-current-weather></section>
+          <!--
+            - #FORECAST
+          -->
+          <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast></section>
+        </div>
+
+
+        <div class="content-right">
+          <a href="#/current-location" class="btn-primary has-state" id="btn-primary" data-current-location-btn>
+            <span class="m-icon">my_location</span>
+            <span class="span">Localização Atual</span>
+          </a>
+          <!--
+            - #HIGHLIGHTS
+          -->
+          <section class="section highlights" aria-labelledby="highlights-label" data-highlights></section>
+          <!--
+            - #HOURLY FORECAST
+          -->
+          <section class="section hourly-forecast" aria-label="hourly forecast" data-hourly-forecast></section>
+          <!--
+            - #FOOTER
+          -->
+          <!-- <footer class="footer">
+            <p class="body-3">
+              Copyright 2024 ClimaSense. All Rights Reserved.
+            </p>
+            <p class="body-3">
+              Powered By <a href="https://openweathermap.org/api" title="Free OpenWeather Api" target="_blank"
+                rel="noopener">
+                <img src="./assets/images/openweather.png" width="150" height="30" loading="lazy" alt="OpenWeather">
+              </a>
+            </p>
+          </footer> -->
+        </div>
+        <div class="loading" data-loading></div>
+      </article>
+    </main>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #404 SECTION
+  -->
+
+  <section class="error-content" data-error-content>
+
+    <h2 class="heading">404</h2>
+
+    <p class="body-1">Page not found!</p>
+
+    <a href="#/weather?lat=51.5073219&lon=-0.1276474" class="btn-primary">
+      <span class="span">Go Home</span>
+    </a>
+
+  </section>
+
+  <!-- <script src="assets/js/sidebar.js"></script> -->
+
+  <script src="{% static 'js/sidebar.js' %}" type="module"></script>
+</body>
+
+</html>

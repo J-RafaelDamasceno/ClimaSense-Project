@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+
+</head>
+
+
+<body>
+     <div class="container">
+        <div class="image">
+            <div class="box-image"><img src="{% static 'img/Computer login-bro.svg' %}" alt=""></div>
+        </div>
+
+        <!-- Entrar -->
+        <div class="box">
+        <div class="box-login" id="login">
+            <div class="top-header">
+                <h3>Bem-vindo de volta!</h3>
+                <small>Faça login para acessar sua conta.</small>
+            </div>
+
+            <form action="{% url 'login' %}" method="post">
+
+               {% csrf_token %}
+
+                 <div class="input-field">
+                    <input type="text" class="input-box" id="username" name="username" required>
+                    <label for="username">Nome</label>
+                 </div>
+                 <div class="input-field">
+                    <input type="password" class="input-box" id="password" name="password" required>
+                    <label for="password">Senha</label>
+                    <div class="eye-area">
+                     <div  class="eye-box" onclick="myLogPassword()">
+                      <i class="fa-regular fa-eye" id="eye"></i>
+                      <i class="fa-regular fa-eye-slash" id="eye-slash"></i>
+                   </div>
+                 </div>
+                 </div>
+
+                 <div class="input-field">
+                    <input type="submit" class="input-submit" value="Entrar" required>
+                 </div>
+                
+            </form>
+         </div>
+
+         <!-- Cadastrar -->
+         <div class="box-register" id="register">
+            <div class="top-header">
+                <h3>Bem-vindo!</h3>
+                <small>Crie uma conta para começar.</small>
+            </div>
+
+            <form method="post">
+               {% csrf_token %}
+                 <div class="input-field">
+                    <input type="text" class="input-box" id="regUsername" name= "username" required>
+
+                    <label for="regUsername">Nome</label>
+                 </div>
+                 <div class="input-field">
+                    <input type="email" class="input-box" id="regEmail" name="email" required>
+                    <label for="regEmail">Email</label>
+                 </div>
+                 <div class="input-field">
+                    <input type="password" class="input-box" id="regPassword" name="password" required>
+                    <label for="regPassword">Senha</label>
+                    <div class="eye-area">
+                      <div  class="eye-box" onclick="myRegPassword()">
+                       <i class="fa-regular fa-eye" id="eye-2"></i>
+                       <i class="fa-regular fa-eye-slash" id="eye-slash-2"></i>
+                    </div>
+                  </div>
+                 </div>
+                 
+                 <div class="input-field">
+                    <input type="submit" class="input-submit" value="Cadastre-se" required>
+                 </div>
+               </form>
+         </div>
+
+         <div class="switch">
+            <a href="#" class="login active" onclick="login()">Entrar</a>
+            <a href="#" class="register" onclick="register()">Cadastrar</a>
+            <div class="btn-active" id="btn"></div>
+         </div>
+         
+      </div>
+</body>
+
+<script src="{% static 'js/script.js' %}"></script>
+</html>
